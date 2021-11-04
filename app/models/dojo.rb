@@ -1,6 +1,8 @@
+# dependent: es un parametro
+#:xxx es un simbolo
 class Dojo < ApplicationRecord
-
-  has_many :ninja
+  
+  has_many :ninja, dependent: :delete_all
 
   validates :name, :city, :state, 
   presence: {message: "campo requerido"}
